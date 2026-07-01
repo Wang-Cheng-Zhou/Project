@@ -881,7 +881,7 @@ class Game:
         s.fill((0, 0, 0, 120))
         self.screen.blit(s, (0, 0))
 
-        title = self.font_big.render('🏰 塔防大作战', True, GOLD)
+        title = self.font_big.render('塔防大作战', True, GOLD)
         r = title.get_rect(center=(SCREEN_W//2, SCREEN_H//2-90))
         self.screen.blit(title, r)
 
@@ -905,7 +905,7 @@ class Game:
             if self.win_img:
                 r = self.win_img.get_rect(center=(SCREEN_W//2, SCREEN_H//2-60))
                 self.screen.blit(self.win_img, r)
-            t = self.font_big.render('🎉 胜利！', True, GOLD)
+            t = self.font_big.render('胜利！', True, GOLD)
             tr = t.get_rect(center=(SCREEN_W//2, SCREEN_H//2+80))
             self.screen.blit(t, tr)
             info = f'击杀 {self.kills} 个怪物 | 剩余 {self.gold} 金币'
@@ -913,7 +913,7 @@ class Game:
             if self.lose_img:
                 r = self.lose_img.get_rect(center=(SCREEN_W//2, SCREEN_H//2-60))
                 self.screen.blit(self.lose_img, r)
-            t = self.font_big.render('💀 失败', True, RED)
+            t = self.font_big.render('失败', True, RED)
             tr = t.get_rect(center=(SCREEN_W//2, SCREEN_H//2+80))
             self.screen.blit(t, tr)
             info = f'坚持了 {GAME_TIME - self.timer//FPS} 秒 | 击杀 {self.kills} 个怪物'
