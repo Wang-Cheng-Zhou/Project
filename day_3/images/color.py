@@ -3,6 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
+plt.rcParams['font.sans-serif'] = ['Microsoft YaHei', 'SimHei', 'SimSun']
+plt.rcParams['axes.unicode_minus'] = False
+
 # 打印调试信息
 print("=== 程序开始执行 ===")
 print(f"OpenCV 版本: {cv2.__version__}")
@@ -72,7 +75,7 @@ print("直方图计算完成")
 
 # 绘制直方图折线
 plt.figure(figsize=(10, 6))
-plt.plot(img_hist)
+plt.plot(img_hist.ravel())
 plt.title("B 通道直方图")
 plt.xlabel("像素值")
 plt.ylabel("像素数量")
@@ -117,7 +120,7 @@ plt.ylabel("# of Pixels")
 
 for (chan, color) in zip(chans, colors):
     hist = cv2.calcHist([chan], [0], None, [256], [0, 256])
-    plt.plot(hist, color=color)
+    plt.plot(hist.ravel(), color=color)
     plt.xlim([0, 256])
 
 plt.grid(True)
